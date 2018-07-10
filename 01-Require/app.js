@@ -12,7 +12,7 @@ let res = notes.add(10,20);
 // console.log(_.isString("true"))
 
 //uniq removes duplicates in an array
-let filteredArray = _.uniq(["Tyler", "1", "Tyler", 1, 2, 3, 4])
+let filteredArray = _.uniq(["Mike", true, true, "true"])
 console.log(filteredArray)
 
 
