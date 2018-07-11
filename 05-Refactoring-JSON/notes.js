@@ -1,4 +1,4 @@
-console.log("Starting notes.js")
+// console.log("Starting notes.js")
 
 const fs = require("fs")
 
@@ -35,6 +35,7 @@ const addNote = (title, body) => {
         //Takes the object defined above, and adds a new note. The purpose of this is to not overwrite the existing contents in the JSON file
         notes.push(note);
         saveNotes(notes)
+        return note;
     }
 }
 

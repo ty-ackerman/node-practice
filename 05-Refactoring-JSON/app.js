@@ -1,4 +1,4 @@
-console.log("Starting app.js")
+// console.log("Starting app.js")
 
 const fs = require("fs");
 const _ = require("lodash");
@@ -8,12 +8,20 @@ const notes = require("./notes.js")
 
 const argv = yargs.argv;
 let command = argv._[0];
-console.log(`Command ${command}`)
-console.log("Yargs", argv)
+// console.log(`Command ${command}`)
+// console.log("Yargs", argv)
 
 
 if (command === "add") {
-    notes.addNote(argv.title, argv.body);
+    let note = notes.addNote(argv.title, argv.body);
+    if (note) {
+        console.log(`Note Added.`)
+        console.log("---")
+        console.log(`Title: ${argv.title}`);
+        console.log(`Body: ${argv.body}`);
+    } else {
+        console.log(`Note With Title "${argv.title}" Already Exists.`)
+    }
 } else if (command === "list") {
     notes.getAll();
 } else if (command === "read") {
@@ -23,5 +31,3 @@ if (command === "add") {
 } else {
     console.log("Command not recognized")
 }
-
-//fs.appendFileSync("test.txt", argv)
